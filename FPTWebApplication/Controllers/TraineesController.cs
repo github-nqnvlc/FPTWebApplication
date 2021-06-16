@@ -36,7 +36,15 @@ namespace FPTWebApplication.Controllers
             return View(_trainees);
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
+        {
+            var trainee = _trainees.SingleOrDefault(t => t.Id == id);
+            if (trainee == null)
+                return HttpNotFound();
+            return View(trainee);
+        }
+
+        public ActionResult Create()
         {
             return View();
         }

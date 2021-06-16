@@ -4,6 +4,12 @@
 }
 
 <h1>Trainee</h1>
+@Html.ActionLink(
+    "Create new Trainee", 
+    "Create", 
+    "Trainees",null,
+    new { @class = "btn btn-primary" }
+    )
 
 <table class="table table-bordered">
     <thead>
@@ -26,7 +32,13 @@
                 <td>@trainee.BDay</td>
                 <td>@trainee.Course</td>
                 <td>
-                    @Html.ActionLink("Detail","Details","Trainees",null, new { @class="btn btn-primary"})
+                    @Html.ActionLink(
+                   "Detail", 
+                   "Details", 
+                   "Trainees", 
+                   new { id = trainee.Id }, 
+                   new { @class = "btn btn-primary" }
+                   )
                     <a href="#" class="btn btn-danger">Delete</a>
                     <a href="#" class="btn btn-default">Edit</a>
 
