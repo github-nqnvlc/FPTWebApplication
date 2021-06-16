@@ -1,0 +1,22 @@
+﻿@model FPTWebApplication.Models.Trainee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@Html.ActionLink("Back to Trainee",
+    "Index",
+    "Trainees",
+    null, 
+    new {@class="btn btn-primary"})
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Information of Trainee</div>
+    <div class="panel-body">
+        <p>Full Name: </p>
+        <p>Gender: </p>
+        <p>Birthday: </p>
+        <p>Course: </p>
+    </div>
+</div>

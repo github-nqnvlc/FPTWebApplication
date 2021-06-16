@@ -35,5 +35,10 @@ namespace FPTWebApplication.Controllers
         {
             return View(_trainees);
         }
+
+        public ActionResult Details()
+        {
+            return View();
+        }
     }
 }
