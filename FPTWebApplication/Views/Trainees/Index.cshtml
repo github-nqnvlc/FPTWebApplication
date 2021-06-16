@@ -1,4 +1,4 @@
-﻿@model FPTWebApplication.Models.Trainee
+﻿@model IEnumerable<FPTWebApplication.Models.Trainee>
 @{
     ViewBag.Title = "Index";
 }
@@ -17,19 +17,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">@Model.Id</th>
-            <td>@Model.FullName</td>
-            <td>@Model.Gender</td>
-            <td>@Model.BDay</td>
-            <td>@Model.Course</td>
-            <td>
-                <a href="#" class="btn btn-primary">Details</a>
-                <a href="#" class="btn btn-danger">Delete</a>
-                <a href="#" class="btn btn-default">Edit</a>
+        @foreach (var trainee in Model)
+        {
+            <tr>
+                <th scope="row">@trainee.Id</th>
+                <td>@trainee.FullName</td>
+                <td>@trainee.Gender</td>
+                <td>@trainee.BDay</td>
+                <td>@trainee.Course</td>
+                <td>
+                    <a href="#" class="btn btn-primary">Details</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-default">Edit</a>
 
-            </td>
-        </tr>
-      
+                </td>
+            </tr>
+        }
+
     </tbody>
 </table>
