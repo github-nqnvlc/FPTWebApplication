@@ -9,7 +9,7 @@ namespace FPTWebApplication.Controllers
 {
     public class TraineesController : Controller
     {
-        private List<Trainee> _trainees;   
+        private List<Trainee> _trainees;
         public TraineesController()
         {
             _trainees = new List<Trainee>();
@@ -45,6 +45,11 @@ namespace FPTWebApplication.Controllers
         }
 
         public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Edit()
         {
             return View();
         }
