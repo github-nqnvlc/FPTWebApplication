@@ -16,6 +16,7 @@ namespace FPTWebApplication.Controllers
             {
                 Id = 1,
                 FullName = "Nguyen Van Loc",
+                Gender = "Male",
                 BDay = DateTime.Now,
                 Course = "Application Deverlopment"
             };
