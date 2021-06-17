@@ -39,9 +39,26 @@ namespace FPTWebApplication.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Trainee trainee)
+        {
+            var newTrainee = new Trainee()
+            {
+                FullName = trainee.FullName,
+                Gender = trainee.Gender,
+                BDay = trainee.BDay,
+                Course = trainee.Course,
+            };
+
+            _context.Trainees.Add(newTrainee);
+            _context.SaveChanges();
+        
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit()

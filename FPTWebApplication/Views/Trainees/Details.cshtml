@@ -5,11 +5,13 @@
 }
 
 <h2>Details</h2>
-@Html.ActionLink("Back to Trainee",
-    "Index",
-    "Trainees",
-    null, 
-    new {@class="btn btn-primary"})
+<div class="form-group">
+    @Html.ActionLink("Back to Trainee",
+        "Index",
+        "Trainees",
+        null,
+        new { @class = "btn btn-primary" })
+</div>
 
 <div class="panel panel-primary">
     <div class="panel-heading">Information of Trainee</div>

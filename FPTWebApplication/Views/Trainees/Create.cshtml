@@ -1,27 +1,29 @@
-﻿
+﻿@model FPTWebApplication.Models.Trainee
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Create new Trainee</h2>
-<form>
+
+@using (Html.BeginForm("Create", "Trainees", FormMethod.Post))
+{
     <div class="form-group">
         <label>Full Name</label>
-        <input type="text" class="form-control" placeholder="Enter full name" />
+        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = "Enter full name" })
     </div>
     <div class="form-group">
         <label>Gender</label>
-        <input type="text" class="form-control" placeholder="Enter gender" />
+        @Html.TextBoxFor(m => m.Gender, new { @class = "form-control", @placeholder = "Enter gender" })
     </div>
     <div class="form-group">
         <label>Birthday</label>
-        <input type="date" class="form-control" />
+        @Html.TextBoxFor(m => m.BDay, new {@type = "date", @class = "form-control", @placeholder = "Enter birthday" })
     </div>
     <div class="form-group">
         <label>Course</label>
-        <input type="text" class="form-control" placeholder="Enter Course" />
+        @Html.TextBoxFor(m => m.Course, new { @class = "form-control", @placeholder = "Enter course" })
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
     </div>
-</form>
+}
