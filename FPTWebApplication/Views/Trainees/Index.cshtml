@@ -33,13 +33,20 @@
                 <td>@trainee.Course</td>
                 <td>
                     @Html.ActionLink(
-                   "Detail", 
-                   "Details", 
-                   "Trainees", 
-                   new { id = trainee.Id }, 
+                   "Detail",
+                   "Details",
+                   "Trainees",
+                   new { id = trainee.Id },
                    new { @class = "btn btn-primary" }
                    )
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    
+                    @Html.ActionLink(
+                  "Delete",
+                  "Delete",
+                  "Trainees",
+                  new { id = trainee.Id },
+                  new { @class = "btn btn-danger" }
+                  ) 
                     <a href="#" class="btn btn-default">Edit</a>
 
                 </td>

@@ -27,11 +27,18 @@ namespace FPTWebApplication.Controllers
         {
             if (id == null) return HttpNotFound();
             var trainee = _context.Trainees.SingleOrDefault(t => t.Id == id);
-            if (trainee == null)
-                return HttpNotFound();
+            if (trainee == null) return HttpNotFound();
             return View(trainee);
         }
-
+        public ActionResult Delete(int? id)
+        {
+            if (id == null) return HttpNotFound();
+            var trainee = _context.Trainees.SingleOrDefault(t => t.Id == id);
+            if (trainee == null) return HttpNotFound();
+            _context.Trainees.Remove(trainee);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public ActionResult Create()
         {
             return View();
