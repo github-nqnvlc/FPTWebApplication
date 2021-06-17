@@ -24,7 +24,7 @@ namespace FPTWebApplication.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        public DbSet<Trainee> Trainees { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
